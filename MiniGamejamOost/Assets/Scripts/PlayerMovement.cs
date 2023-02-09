@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    GameObject gameManager;
     private Rigidbody2D rb;
     [SerializeField] private float playerSpeed = 5f;
     public GameObject bullet;
@@ -19,11 +20,16 @@ public class PlayerMovement : MonoBehaviour
     float timer2;
     bool accelerate = true;
     float shooting;
+    Vector3 mouse_pos;
+    [SerializeField] Transform gun;
+    Vector3 object_pos;
+    float angle;
     void Start()
     {
         shooting = shootTimer;
         timer2 = timer;
         rb = GetComponent<Rigidbody2D>();
+        gameManager = GameObject.Find("GameManager");
     }
 
 
@@ -46,11 +52,28 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Test(playerSpeed, maxspeed));
             }
         }
+        #region jumping
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             rb.velocity = new Vector2(0, 0);
-            rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse); //creeërt een jump door middel van force
+            rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse); //creeï¿½rt een jump door middel van force
         }
+        #endregion
+        #region ammoadding
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            gameManager.GetComponent<AmmoCache>().bulletAmount++;
+        }
+        #endregion
+        #region rotateGun
+        mouse_pos = Input.mousePosition;
+        mouse_pos.z = 5.23f; //The distance between the camera and object
+        object_pos = Camera.main.WorldToScreenPoint(gun.position);
+        mouse_pos.x = mouse_pos.x - object_pos.x;
+        mouse_pos.y = mouse_pos.y - object_pos.y;
+        angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
+        GameObject.Find("Rotation").transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        #endregion
     }
 
     void PlayerMove()
@@ -62,13 +85,13 @@ public class PlayerMovement : MonoBehaviour
     }
     void PlayerShoot()
     {
-        shootTimer -= Time.deltaTime;
-        if (shootTimer <= 0)
+        for (float b = 0; b < gameManager.GetComponent<AmmoCache>().bulletAmount; b++)
         {
             Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-            shootTimer = 0.1f;
+            gameManager.GetComponent<AmmoCache>().bulletAmount--;
         }
     }
+    
     IEnumerator Test(float startValue, float endValue)
     {
         float time = 0;

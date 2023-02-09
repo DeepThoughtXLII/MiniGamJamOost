@@ -1,29 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class AmmoCache : MonoBehaviour
 {
-    public List <Bullet> bullets = new List<Bullet>();
-    int bulletcount;
+    public float bulletAmount;
+    [SerializeField] private TextMeshProUGUI ammoText;
     // Start is called before the first frame update
     void Start()
     {
-        bulletcount = bullets.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bullets.Count > bulletcount)
-        {
-            foreach (Bullet bullet in bullets)
-            {
-                if (bullet == bullets[bulletcount])
-                {
-                    print("test");
-                }
-            }
-        }
+        ammoText.text = "ammo: " + bulletAmount;
     }
 }
