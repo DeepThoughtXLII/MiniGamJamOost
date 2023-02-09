@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             rb.velocity = new Vector2(0, 0);
-            rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse); //cree�rt een jump door middel van force
+            rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
         }
         #endregion
         #region ammoadding
@@ -86,11 +86,14 @@ public class PlayerMovement : MonoBehaviour
     }
     void PlayerShoot()
     {
-        for (float b = 0; b < gameManager.GetComponent<AmmoCache>().bulletAmount; b++)
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0 && gameManager.GetComponent<AmmoCache>().bulletAmount >= 1)
         {
             Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
             gameManager.GetComponent<AmmoCache>().bulletAmount--;
+            shootTimer = shooting;
         }
+        
     }
     
     IEnumerator Test(float startValue, float endValue)
