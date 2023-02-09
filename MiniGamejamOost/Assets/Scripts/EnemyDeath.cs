@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour
 {
+    [SerializeField] float hp = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +14,13 @@ public class EnemyDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
-    public void TakeDamage()
+    public void TakeDamage(float dmg)
     {
-        Destroy(gameObject);
+        hp -= dmg;
     }
 }
