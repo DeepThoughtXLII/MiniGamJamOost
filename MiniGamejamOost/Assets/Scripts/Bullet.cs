@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private float bulletSpeed = 20f;
     private float lifeTime = 2f;
+    [SerializeField] private float damage = 1;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +26,7 @@ public class Bullet : MonoBehaviour
         if (enemycheck != null)
         {
             Destroy(gameObject);
-            enemycheck.TakeDamage(1);
+            enemycheck.TakeDamage(damage);
             Debug.Log("headshawt");
         }
         else if (collision.gameObject.name != gameObject.name)
