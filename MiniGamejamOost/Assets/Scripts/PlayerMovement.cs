@@ -37,22 +37,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         PlayerMove();
-
+        #region shooting
         if (Input.GetKey(KeyCode.Mouse0))
         {
             PlayerShoot();
         }
-        if (accelerate)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                timer = timer2;
-                speedMulti = playerSpeed * 0.1f;
-                maxspeed = playerSpeed + speedMulti;
-                StartCoroutine(Test(playerSpeed, maxspeed));
-            }
-        }
+        #endregion
         #region jumping
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
@@ -94,18 +84,6 @@ public class PlayerMovement : MonoBehaviour
             shootTimer = shooting;
         }
         
-    }
-    
-    IEnumerator Test(float startValue, float endValue)
-    {
-        float time = 0;
-
-        while (time < duration)
-        {
-            playerSpeed = Mathf.Lerp(startValue, endValue, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
