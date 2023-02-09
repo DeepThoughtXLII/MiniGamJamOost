@@ -14,11 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 10;
     [SerializeField] private float shootTimer = 0.1f;
     public GameObject groundCheck;
-    private float maxspeed;
     public bool isOnGround = false;
-    float duration = 1;
-    float timer2;
-    bool accelerate = true;
     float shooting;
     Vector3 mouse_pos;
     [SerializeField] Transform gun;
@@ -28,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 3;
         shooting = shootTimer;
-        timer2 = timer;
         rb = GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("GameManager");
     }
@@ -84,19 +79,5 @@ public class PlayerMovement : MonoBehaviour
             shootTimer = shooting;
         }
         
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.name == "Wall")
-        {
-            accelerate = false;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.name == "Wall")
-        {
-            accelerate = true;
-        }
     }
 }
