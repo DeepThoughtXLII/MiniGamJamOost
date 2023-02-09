@@ -5,16 +5,17 @@ using UnityEngine;
 public class LevelGeneration : MonoBehaviour
 {
 
-    [SerializeField] GameObject GroundPrefab;
     [SerializeField] GameObject PlatformPrefab;
 
     [SerializeField] Transform playerPos;
 
-    [SerializeField] float currentBorderX;
+    [SerializeField] LevelSection newestGround;
 
-    [SerializeField] Transform newestGround;
+    List<LevelSection> groundPieces = new List<LevelSection>();
 
-    [SerializeField] List<Transform> groundPieces = new List<Transform>();
+    [SerializeField] List<GameObject> levelSections = new List<GameObject>();
+
+    [SerializeField] Vector2Int widthRangeOfGroundTiles = new Vector2Int(1, 3);
 
     Camera _camera;
 
@@ -23,8 +24,12 @@ public class LevelGeneration : MonoBehaviour
 
     private void Start()
     {
+        if(levelSections.Count < 0)
+        {
+            Debug.LogError("No level sections provided in Level Generator");
+        }
         findCurrentGround();
-        currentBorderX = GetBorder(groundPieces[groundPieces.Count-1]); //ground thats furthest away
+        newestGround = groundPieces[groundPieces.Count - 1];    
         _camera = Camera.main;
     }
 
@@ -40,13 +45,13 @@ public class LevelGeneration : MonoBehaviour
     {
         for(int i = 0; i < transform.childCount; i++)
         {
-            groundPieces.Add(transform.GetChild(i));
+            groundPieces.Add(transform.GetChild(i).GetComponent<LevelSection>());
         }
     }
 
     private void checkIfLeftScreen()
     {
-        if (currentBorderX <= playerPos.position.x)
+        if (playerPos.position.x >= newestGround.GetLeftBorder().x)
         {
             addNewGroundPiece();
         }
@@ -54,24 +59,30 @@ public class LevelGeneration : MonoBehaviour
 
     private void addNewGroundPiece()
     {
-        Vector3 positionOfNewGround = newestGround.position;
-        positionOfNewGround.x += newestGround.localScale.x/2;
-        GameObject ground = (GameObject)Instantiate(GroundPrefab, positionOfNewGround, Quaternion.identity, transform);
-        newestGround = ground.transform;
-        currentBorderX = GetBorder(newestGround);
+        //calculate Position of new piece
+        Vector3 positionOfNewGround = newestGround.GetRightBorder();
+
+        //instantiate piece and update references
+        GameObject ground = (GameObject)Instantiate(GetNextSection(), positionOfNewGround, Quaternion.identity, transform);
+        LevelSection groundPiece = ground.GetComponent<LevelSection>();
+        newestGround = groundPiece;
         groundPieces.Add(newestGround);
+        groundPiece.AdjustPosByWidth();
+
     }
 
-    private float GetBorder(Transform ground)
+    private GameObject GetNextSection()
     {
-        return ground.position.x - ground.localScale.x / 2;
+        int index = Random.Range(0, levelSections.Count);
+        return levelSections[index];
     }
+
 
     private void cleanUpLevelBehind()
     {
         if (groundPieces.Count > 0)
         {
-            if (groundPieces[0].position.x + groundPieces[0].localScale.x / 2 < firewall.position.x)
+            if (groundPieces[0].GetRightBorder().x / 2 < firewall.position.x)
             {
                 Destroy(groundPieces[0].gameObject);
                 groundPieces.RemoveAt(0);
