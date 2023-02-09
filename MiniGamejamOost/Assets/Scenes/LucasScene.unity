@@ -229,7 +229,7 @@ MonoBehaviour:
   speedMulti: 0
   timer: 1
   jumpHeight: 10
-  shootTimer: 0.1
+  shootTimer: 0.025
   groundCheck: {fileID: 1641065685}
   isOnGround: 0
   gun: {fileID: 1501165632}
