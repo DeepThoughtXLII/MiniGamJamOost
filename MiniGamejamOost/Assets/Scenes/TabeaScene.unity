@@ -327,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1.21
   speedMultiplier: 1.0001
+  _speedCap: 10
 --- !u!114 &617536739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,9 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 992308724}
   levelSections:
-  - {fileID: 6993154964085482700, guid: 80c480d736ebbf045855928521132858, type: 3}
-  - {fileID: 1691151618898364782, guid: 838be97e49a956346945a1013ba08030, type: 3}
-  - {fileID: 1568158490334978379, guid: da95f175c44f99a40839683f3f6f241f, type: 3}
+  - {fileID: 4735499904664398644, guid: 2cdaba7084753874aa733afd5738e0d9, type: 3}
   firewall: {fileID: 784012569}
 --- !u!4 &617536740
 Transform:
@@ -373,6 +372,7 @@ GameObject:
   - component: {fileID: 784012569}
   - component: {fileID: 784012568}
   - component: {fileID: 784012567}
+  - component: {fileID: 784012570}
   m_Layer: 0
   m_Name: FireWall (1)
   m_TagString: Untagged
@@ -461,6 +461,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &784012570
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784012566}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &793321570
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30f7423ed5d672479abac3968f61da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletAmount: 35.7
+  bulletAmount: 1000
   ammoText: {fileID: 793321571}
 --- !u!4 &907920249
 Transform:
@@ -832,11 +858,12 @@ GameObject:
   - component: {fileID: 992308724}
   - component: {fileID: 992308728}
   - component: {fileID: 992308727}
+  - component: {fileID: 992308729}
   - component: {fileID: 992308726}
   - component: {fileID: 992308725}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -970,6 +997,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &992308729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992308723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5b20a141c05d641b502fc90234e9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1042449902
 GameObject:
   m_ObjectHideFlags: 0

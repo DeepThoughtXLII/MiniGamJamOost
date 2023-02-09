@@ -28,8 +28,11 @@ public class LevelGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkIfLeftScreen();
-        cleanUpLevelBehind();
+        if (playerPos != null)
+        {
+            checkIfNextGroundNeeded();
+            cleanUpLevelBehind();
+        }
     }
 
 
@@ -41,7 +44,7 @@ public class LevelGeneration : MonoBehaviour
         }
     }
 
-    private void checkIfLeftScreen()
+    private void checkIfNextGroundNeeded()
     {
         if (playerPos.position.x >= newestGround.GetLeftBorder().x)
         {
@@ -74,7 +77,7 @@ public class LevelGeneration : MonoBehaviour
     {
         if (groundPieces.Count > 0)
         {
-            if (groundPieces[0].GetRightBorder().x / 2 < firewall.position.x)
+            if (groundPieces[1].GetRightBorder().x / 2 < firewall.position.x)
             {
                 Destroy(groundPieces[0].gameObject);
                 groundPieces.RemoveAt(0);
