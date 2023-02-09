@@ -22,6 +22,13 @@ public class GroundCheck : MonoBehaviour
             gameObject.GetComponentInParent<PlayerMovement>().isOnGround = true;
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.name == "Floor")
+        {
+            gameObject.GetComponentInParent<PlayerMovement>().isOnGround = true;
+        }
+    }
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.name == "Floor")
