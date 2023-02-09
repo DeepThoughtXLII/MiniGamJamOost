@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30f7423ed5d672479abac3968f61da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletAmount: 35.7
+  bulletAmount: 30
   ammoText: {fileID: 1580444190}
 --- !u!4 &110918176
 Transform:
