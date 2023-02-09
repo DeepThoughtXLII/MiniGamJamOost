@@ -75,14 +75,22 @@ public class PlayerMovement : MonoBehaviour
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0 && gameManager.GetComponent<AmmoCache>().bulletAmount >= 1)
         {
-            if (GameObject.Find("Rotation").transform.eulerAngles.z <= 280 && GameObject.Find("Rotation").transform.eulerAngles.z >= 260 && isOnGround)
+            if (GameObject.Find("Rotation").transform.eulerAngles.z <= 280 && GameObject.Find("Rotation").transform.eulerAngles.z >= 260)
             {
-                print("test");
-                rb.AddForce(new Vector2(0, rocketJumpHeight), ForceMode2D.Impulse);
+                if (isOnGround)
+                {
+                    rb.AddForce(new Vector2(0, rocketJumpHeight), ForceMode2D.Impulse);
+                }
+                Instantiate(bullet, new Vector3(shootPoint.transform.position.x, shootPoint.transform.position.y - 0.2f, shootPoint.transform.position.z), shootPoint.transform.rotation);
+                gameManager.GetComponent<AmmoCache>().bulletAmount--;
+                shootTimer = shooting;
             }
-            Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-            gameManager.GetComponent<AmmoCache>().bulletAmount--;
-            shootTimer = shooting;
+            else
+            {
+                Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+                gameManager.GetComponent<AmmoCache>().bulletAmount--;
+                shootTimer = shooting;
+            }
         }
         
     }
