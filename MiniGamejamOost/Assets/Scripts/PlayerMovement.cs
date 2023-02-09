@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     float angle;
     void Start()
     {
+        Time.timeScale = 3;
         shooting = shootTimer;
         timer2 = timer;
         rb = GetComponent<Rigidbody2D>();
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         }
         #endregion
         #region ammoadding
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKey(KeyCode.Backspace))
         {
             gameManager.GetComponent<AmmoCache>().bulletAmount++;
         }
