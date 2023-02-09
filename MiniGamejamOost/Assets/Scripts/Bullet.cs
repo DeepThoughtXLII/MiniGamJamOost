@@ -28,5 +28,9 @@ public class Bullet : MonoBehaviour
             enemycheck.TakeDamage();
             Debug.Log("headshawt");
         }
+        else if (collision.gameObject.name != gameObject.name)
+        {
+            Destroy(gameObject);
+        }
     }
 }
