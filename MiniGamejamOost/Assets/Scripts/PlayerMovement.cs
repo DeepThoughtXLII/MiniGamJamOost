@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float timer = 1;
     [SerializeField] private float jumpHeight = 10;
     [SerializeField] private float shootTimer = 0.1f;
+    [SerializeField] private float rocketJumpHeight = 1;
     public GameObject groundCheck;
     public bool isOnGround = false;
     float shooting;
@@ -74,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0 && gameManager.GetComponent<AmmoCache>().bulletAmount >= 1)
         {
+            if (GameObject.Find("Rotation").transform.eulerAngles.z <= 280 && GameObject.Find("Rotation").transform.eulerAngles.z >= 260 && isOnGround)
+            {
+                print("test");
+                rb.AddForce(new Vector2(0, rocketJumpHeight), ForceMode2D.Impulse);
+            }
             Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
             gameManager.GetComponent<AmmoCache>().bulletAmount--;
             shootTimer = shooting;
