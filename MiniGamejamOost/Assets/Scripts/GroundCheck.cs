@@ -21,6 +21,11 @@ public class GroundCheck : MonoBehaviour
         {
             gameObject.GetComponentInParent<PlayerMovement>().isOnGround = true;
         }
+        if (collision.collider.name == "Vanishing Block")
+        {
+            collision.collider.GetComponent<VanishingBlock>().dissapear = true;
+        }
+
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
