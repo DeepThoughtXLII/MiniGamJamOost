@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5937110632197916300
+--- !u!1001 &5613639496983147003
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,25 +9,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 945508384502676555, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
       propertyPath: m_Color.b
-      value: 0.5518868
+      value: 0.5896226
       objectReference: {fileID: 0}
     - target: {fileID: 945508384502676555, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
       propertyPath: m_Color.g
-      value: 0.5518868
+      value: 0.5896226
       objectReference: {fileID: 0}
     - target: {fileID: 945508384502676555, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2941561306575899746, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5518868
-      objectReference: {fileID: 0}
-    - target: {fileID: 2941561306575899746, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5518868
-      objectReference: {fileID: 0}
-    - target: {fileID: 2941561306575899746, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
@@ -78,18 +66,6 @@ PrefabInstance:
     - target: {fileID: 3236691761562342711, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
       propertyPath: m_Name
       value: LevelSection1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126042273091985150, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5518868
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126042273091985150, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5518868
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126042273091985150, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb310bdeaa18ca488c4cd362dbf2f68, type: 3}

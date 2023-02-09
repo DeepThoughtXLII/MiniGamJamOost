@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour
 {
-
-    [SerializeField] GameObject PlatformPrefab;
-
     [SerializeField] Transform playerPos;
 
-    [SerializeField] LevelSection newestGround;
+    LevelSection newestGround;
 
     List<LevelSection> groundPieces = new List<LevelSection>();
 
     [SerializeField] List<GameObject> levelSections = new List<GameObject>();
-
-    [SerializeField] Vector2Int widthRangeOfGroundTiles = new Vector2Int(1, 3);
-
-    Camera _camera;
 
     [SerializeField] Transform firewall;
 
@@ -30,7 +23,6 @@ public class LevelGeneration : MonoBehaviour
         }
         findCurrentGround();
         newestGround = groundPieces[groundPieces.Count - 1];    
-        _camera = Camera.main;
     }
 
     // Update is called once per frame
@@ -88,7 +80,5 @@ public class LevelGeneration : MonoBehaviour
                 groundPieces.RemoveAt(0);
             }
         }
-        //float camWidth = _camera.aspect * _camera.he
-        //if (groundPieces[0].position.x < _camera.)
     }
 }
