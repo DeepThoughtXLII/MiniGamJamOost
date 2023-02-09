@@ -13,4 +13,14 @@ public class Firewall : MonoBehaviour
         _speed *= speedMultiplier;
         transform.Translate(Vector2.right * _speed * Time.deltaTime);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            Camera.main.transform.parent = null;
+            collision.transform.GetComponent<PlayerHealth>().killPlayer();
+        }
+    }
 }
