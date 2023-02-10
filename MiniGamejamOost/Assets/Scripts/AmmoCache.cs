@@ -14,6 +14,6 @@ public class AmmoCache : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammoText.text = "ammo: " + bulletAmount;
+        ammoText.text = ""+bulletAmount;
     }
 }
