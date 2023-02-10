@@ -8,6 +8,8 @@ public class LevelScrolling : MonoBehaviour
     [SerializeField] private float speedMultiplier;
     [SerializeField] private float _speedCap = 10;
 
+    float scoreMulti = 1;
+
     private void Start()
     {
         wallBehaviour.OnWallEnter += slowLevel;
@@ -23,6 +25,8 @@ public class LevelScrolling : MonoBehaviour
     {
         
         _speed *= speedMultiplier;
+        scoreMulti = scoreMulti + _speed;
+        Score.instance.yourScore = (int)scoreMulti;
         if(_speed > _speedCap)
         {
             _speed = _speedCap;
