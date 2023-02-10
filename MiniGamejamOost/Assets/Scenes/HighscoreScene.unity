@@ -768,6 +768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1578312518321496324, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_text
+      value: 1214314
+      objectReference: {fileID: 0}
     - target: {fileID: 1578312518719590485, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
