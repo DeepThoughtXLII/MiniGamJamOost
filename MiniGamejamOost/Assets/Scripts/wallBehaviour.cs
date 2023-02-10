@@ -9,13 +9,11 @@ public class wallBehaviour : MonoBehaviour
     [SerializeField] float slowInPercent = 0.5f;
     BoxCollider2D parentCollider;
     private GameObject gameManager;
-
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
         parentCollider = transform.parent.GetComponent<BoxCollider2D>();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Player"))
@@ -23,7 +21,6 @@ public class wallBehaviour : MonoBehaviour
             if (parentCollider.name != "Vanishing Block")
             {
                 gameManager.GetComponent<Audio>().audioSource.PlayOneShot(gameManager.GetComponent<Audio>().wallGlitch);
-                collision.gameObject.transform.Find("Glitch").gameObject.SetActive(true);
                 parentCollider.enabled = false;
                 OnWallEnter(slowInPercent);
             }
@@ -35,7 +32,6 @@ public class wallBehaviour : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             parentCollider.enabled = true;
-            collision.gameObject.transform.Find("Glitch").gameObject.SetActive(false);
         }
     }
 
