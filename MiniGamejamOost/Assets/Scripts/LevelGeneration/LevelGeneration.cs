@@ -83,9 +83,9 @@ public class LevelGeneration : MonoBehaviour
 
     private void cleanUpLevelBehind()
     {
-        if (groundPieces.Count > 0)
+        if (groundPieces.Count > 1)
         {
-            if (groundPieces[1].GetRightBorder().x / 2 < firewall.position.x)
+            if (groundPieces[1].GetRightBorder().x < firewall.position.x)
             {
                 Destroy(groundPieces[0].gameObject);
                 groundPieces.RemoveAt(0);
