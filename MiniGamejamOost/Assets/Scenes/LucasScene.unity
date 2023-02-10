@@ -245,11 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46dae0fb6056ab40bf74f3a860d02c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
   bullet: {fileID: 1230205686222376756, guid: b0bf4231a0b55de45acde9026c995d11, type: 3}
   shootPoint: {fileID: 1277926868}
   speedMulti: 0
-  timer: 1
   jumpHeight: 10
   shootTimer: 0.025
   rocketJumpHeight: 6
@@ -350,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 144840715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.3, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -434,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 160228493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.3, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -687,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 1216739896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.3, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -887,7 +885,7 @@ Transform:
   m_GameObject: {fileID: 1533906854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.3, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1622,7 +1620,7 @@ Transform:
   m_GameObject: {fileID: 1863415581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.3, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
