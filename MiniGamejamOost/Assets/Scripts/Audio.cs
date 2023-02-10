@@ -11,6 +11,7 @@ public class Audio : MonoBehaviour
     public AudioClip death;
     public AudioClip ammoCrate;
     public AudioClip loopedMusic;
+    public AudioClip wallGlitch;
     private float time;
 
     void Start()
