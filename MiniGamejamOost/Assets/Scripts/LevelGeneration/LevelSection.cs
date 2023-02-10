@@ -5,28 +5,57 @@ using UnityEngine;
 public class LevelSection : MonoBehaviour
 {
 
-    [SerializeField] Transform GroundPiece;
+    [SerializeField] Transform startGround;
+    [SerializeField] Transform endGround;
+
+    BoxCollider2D startColl;
+    BoxCollider2D endColl;
+
+    private void Start()
+    {
+        if(startGround == null || endGround == null)
+        {
+            Debug.LogError("Level section ground not defined");
+        }
+        else
+        {
+            startColl = startGround.GetComponent<BoxCollider2D>();
+            endColl = endGround.GetComponent<BoxCollider2D>();
+            //AdjustPosByWidth();
+        }
+    }
 
 
+    //adjust the position of the section transform to the middle of the section
     public void AdjustPosByWidth()
     {
-        Vector3 pos = transform.position;
-        pos.x += GroundPiece.localScale.x / 2;
-        transform.position = pos;
+        Debug.Log(startGround + " " + endGround + " " + startColl + " " + endColl);
+            Vector3 pos = transform.position;
+            float startX = startGround.position.x - startColl.size.x;
+            float endX = endGround.position.x + endColl.size.x;
+            float widthOfSection = endX - startX;
+            pos.x = startX + widthOfSection/2;
+            transform.position = pos;
     }
 
     public Vector3 GetLeftBorder()
     {
         Vector3 pos = transform.position;
-        pos.x = pos.x - GroundPiece.localScale.x / 2;
+        pos.x = startGround.position.x - startColl.size.x;
         return pos;
+        //Vector3 pos = transform.position;
+        //pos.x = pos.x - GroundPiece.localScale.x / 2;
+        //return pos;
     }
 
     public Vector3 GetRightBorder()
     {
         Vector3 pos = transform.position;
-        pos.x = pos.x + GroundPiece.localScale.x / 2;
+        pos.x = endGround.position.x + endColl.size.x;
         return pos;
+        //Vector3 pos = transform.position;
+        //pos.x = pos.x + GroundPiece.localScale.x / 2;
+        //return pos;
     }
 
 

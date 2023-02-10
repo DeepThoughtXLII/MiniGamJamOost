@@ -14,6 +14,10 @@ public class LevelGeneration : MonoBehaviour
 
     [SerializeField] Transform firewall;
 
+    [SerializeField] float nextGroundDistance;
+
+    float safeDist = 0.2f;
+
 
     private void Start()
     {
@@ -24,6 +28,7 @@ public class LevelGeneration : MonoBehaviour
         findCurrentGround();
         newestGround = groundPieces[groundPieces.Count - 1];    
     }
+
 
     // Update is called once per frame
     void Update()
@@ -44,25 +49,28 @@ public class LevelGeneration : MonoBehaviour
         }
     }
 
+
+
     private void checkIfNextGroundNeeded()
     {
-        if (playerPos.position.x >= newestGround.GetLeftBorder().x)
+        if (newestGround.GetRightBorder().x <= nextGroundDistance)
         {
             addNewGroundPiece();
         }
     }
 
+
     private void addNewGroundPiece()
     {
         //calculate Position of new piece
         Vector3 positionOfNewGround = newestGround.GetRightBorder();
-
+        positionOfNewGround.x -= safeDist;
         //instantiate piece and update references
         GameObject ground = (GameObject)Instantiate(GetNextSection(), positionOfNewGround, Quaternion.identity, transform);
         LevelSection groundPiece = ground.GetComponent<LevelSection>();
         newestGround = groundPiece;
         groundPieces.Add(newestGround);
-        groundPiece.AdjustPosByWidth();
+        //groundPiece.AdjustPosByWidth();
 
     }
 
@@ -83,5 +91,13 @@ public class LevelGeneration : MonoBehaviour
                 groundPieces.RemoveAt(0);
             }
         }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 levelPos = transform.position;
+        levelPos.x = nextGroundDistance;
+        Gizmos.DrawWireSphere(levelPos, 0.3f);
     }
 }
