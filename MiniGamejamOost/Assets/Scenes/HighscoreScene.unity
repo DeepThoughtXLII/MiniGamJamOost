@@ -904,6 +904,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1861382874}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578312520242080129, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4904591048416592929, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
@@ -932,6 +960,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1861382873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1578312519074671141, guid: 096cfdbb7ee1e7a4bbccf5e09ff3bc88, type: 3}
+  m_PrefabInstance: {fileID: 1861382869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861382874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861382873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a25964a660d41145a5a452f3e5699ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1979471907

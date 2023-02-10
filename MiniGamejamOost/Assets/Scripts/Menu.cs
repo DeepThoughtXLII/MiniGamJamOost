@@ -21,4 +21,9 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("MaikScene");
     }
+
+    public void Main()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
