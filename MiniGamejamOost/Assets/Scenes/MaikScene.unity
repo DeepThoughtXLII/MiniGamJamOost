@@ -1050,6 +1050,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: a96e463d47da80b44afa5a087cd0a630, type: 3}
   ammoCrate: {fileID: 8300000, guid: a9f23f55e5ee35243b61bbbd77f78314, type: 3}
   loopedMusic: {fileID: 8300000, guid: 918d58cf51be19a45b2d901df55f9879, type: 3}
+  wallGlitch: {fileID: 0}
 --- !u!114 &1476662864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1503,6 +1504,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515791635059037440, guid: 93e336043c9ff604ba1737c85e898502, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515791635059037440, guid: 93e336043c9ff604ba1737c85e898502, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1515791635059037443, guid: 93e336043c9ff604ba1737c85e898502, type: 3}
       propertyPath: m_RootOrder
       value: 7
