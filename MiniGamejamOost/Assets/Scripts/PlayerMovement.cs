@@ -6,11 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     GameObject gameManager;
     private Rigidbody2D rb;
-    [SerializeField] private float playerSpeed = 5f;
     public GameObject bullet;
     public GameObject shootPoint;
     [SerializeField] private float speedMulti;
-    [SerializeField] private float timer = 1;
     [SerializeField] private float jumpHeight = 10;
     [SerializeField] private float shootTimer = 0.1f;
     [SerializeField] private float rocketJumpHeight = 1;
@@ -98,8 +96,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.name == "AmmoBox")
         {
-            gameManager.GetComponent<AmmoCache>().bulletAmount += 50;
             Destroy(collision.collider.gameObject);
+            gameManager.GetComponent<AmmoCache>().bulletAmount += 50;
         }
     }
 }

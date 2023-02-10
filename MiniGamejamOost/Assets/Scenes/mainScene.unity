@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022828711303517146, guid: 4089b0b2aa0704a4a8483195a327405e, type: 3}
       propertyPath: m_Name
-      value: Vanishing Block (1)
+      value: Vanishing Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4089b0b2aa0704a4a8483195a327405e, type: 3}
@@ -1355,7 +1355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6022828711303517146, guid: 4089b0b2aa0704a4a8483195a327405e, type: 3}
       propertyPath: m_Name
-      value: Vanishing Block (2)
+      value: Vanishing Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4089b0b2aa0704a4a8483195a327405e, type: 3}
