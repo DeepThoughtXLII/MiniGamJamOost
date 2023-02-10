@@ -18,8 +18,11 @@ public class wallBehaviour : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            parentCollider.enabled = false;
-            OnWallEnter(slowInPercent);
+            if (parentCollider.name != "Vanishing Block")
+            {
+                parentCollider.enabled = false;
+                OnWallEnter(slowInPercent);
+            }
         }
     }
 
