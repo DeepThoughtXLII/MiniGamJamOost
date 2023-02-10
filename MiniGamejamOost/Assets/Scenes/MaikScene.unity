@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: rocketJumpHeight
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7807262194213624737, guid: 4c2138fbed0afba44b98b25eab8d186f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7807262194213624739, guid: 4c2138fbed0afba44b98b25eab8d186f, type: 3}
       propertyPath: m_Name
       value: Player Variant
