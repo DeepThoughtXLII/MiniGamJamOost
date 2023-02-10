@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        gameObject.transform.Find("Glitch").gameObject.SetActive(false);
+        
         PlayerMove();
         #region shooting
         if (Input.GetKey(KeyCode.Mouse0))
