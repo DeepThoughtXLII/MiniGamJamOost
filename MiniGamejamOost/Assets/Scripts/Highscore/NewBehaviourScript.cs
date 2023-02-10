@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,12 +14,5 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         
-    }
-
-
-    public void killPlayer()
-    {
-        SceneManager.LoadScene("HighscoreScene");
-        Destroy(transform.gameObject);
     }
 }
