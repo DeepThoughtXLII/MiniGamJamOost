@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
         PlayerMove();
         #region shooting
         if (Input.GetKey(KeyCode.Mouse0))
