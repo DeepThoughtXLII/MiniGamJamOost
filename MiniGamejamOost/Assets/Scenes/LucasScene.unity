@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 90736420}
   - component: {fileID: 90736424}
   - component: {fileID: 90736423}
-  - component: {fileID: 90736422}
+  - component: {fileID: 90736425}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -212,32 +212,6 @@ Transform:
   m_Father: {fileID: 1804761398}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &90736422
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90736419}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.03252528, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.41, y: 0.63}
-    newSize: {x: 0.41, y: 0.63}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3114997, y: 0.63}
-  m_EdgeRadius: 0
 --- !u!50 &90736423
 Rigidbody2D:
   serializedVersion: 4
@@ -282,6 +256,22 @@ MonoBehaviour:
   groundCheck: {fileID: 1641065685}
   isOnGround: 0
   gun: {fileID: 1501165632}
+--- !u!70 &90736425
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90736419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0073112054, y: 0.04114505}
+  m_Size: {x: 0.41537756, y: 0.6496223}
+  m_Direction: 0
 --- !u!1 &144840715
 GameObject:
   m_ObjectHideFlags: 0
