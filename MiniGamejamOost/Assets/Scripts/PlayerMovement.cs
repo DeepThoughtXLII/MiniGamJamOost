@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
         #region jumping
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
+            int jump = Random.Range(0, gameManager.GetComponent<Audio>().jumps.Length);
+            gameManager.GetComponent<Audio>().audioSource.PlayOneShot(gameManager.GetComponent<Audio>().jumps[jump]);
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
         }
@@ -73,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0 && gameManager.GetComponent<AmmoCache>().bulletAmount >= 1)
         {
+            int shot = Random.Range(0, gameManager.GetComponent<Audio>().jumps.Length);
+            gameManager.GetComponent<Audio>().audioSource.PlayOneShot(gameManager.GetComponent<Audio>().shots[shot]);
             if (GameObject.Find("Rotation").transform.eulerAngles.z <= 280 && GameObject.Find("Rotation").transform.eulerAngles.z >= 260)
             {
                 if (isOnGround)
@@ -96,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.name == "AmmoBox")
         {
+            gameManager.GetComponent<Audio>().audioSource.PlayOneShot(gameManager.GetComponent<Audio>().ammoCrate);
             Destroy(collision.collider.gameObject);
             gameManager.GetComponent<AmmoCache>().bulletAmount += 50;
         }
